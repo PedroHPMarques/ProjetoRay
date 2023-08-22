@@ -13,6 +13,7 @@ export function TextIndex({text,color,size,textAlign}:TextIndexProps){
         as="p"
         color={color}
         fontSize={size}
+        fontFamily="Montserrat"
         fontWeight="bold"
         >
             {text}

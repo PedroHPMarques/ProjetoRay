@@ -12,7 +12,7 @@ export function SectionIndex() {
             py={10}
         >
             <Stack spacing={6} w={"50%"}>
-                <TitleIndex text={"Nossa História"} color={"white"} />
+                <TitleIndex text={"Nossa História"} color={"white"} size={"64px"} />
                 <TextIndex text={"Olá, gamers entusiastas! É com grande entusiasmo que apresentamos a vocês o RaY Store, o destino definitivo para os apaixonados por jogos. No RaY, estamos comprometidos em proporcionar uma experiência de jogo extraordinária, trazendo até você uma variedade incrível de títulos"} color={"white"} size={"20px"}/>
                 <TextIndex text={"No RaY, acreditamos que jogar não é apenas sobre vencer, mas também sobre criar memórias duradouras. Oferecemos uma seleção diversificada de jogos que vão desde aventuras épicas até desafios estratégicos, garantindo que você encontre algo que alimente sua paixão por jogos."} color={"white"} size={"20px"}/>
             </Stack>
