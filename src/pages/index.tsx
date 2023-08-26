@@ -14,7 +14,7 @@ export default function Home() {
       <SectionIndex />
 
       {/* Ofertas da Semana */}
-      <Stack spacing={20}>
+      <Stack spacing={24}>
         <Stack
           align={"center"}
         >
@@ -22,14 +22,14 @@ export default function Home() {
         </Stack>
 
         <Stack
+          spacing={14}
           px={40}
         >
           <HStack
             align={"flex-start"}
-            spacing={10}
+            spacing={12}
             px={10}
             justify={"center"}
-            // w="100%"
           >
             <CardIndex src={"/Farcry.png"} width={370} heigth={459} name={"Farcry New Dawn"} price={"R$ 50,00"} alt={"Farcry"} />
             <CardIndex src={"/Nfs.png"} width={370} heigth={459} name={"Need For Speed"} price={"R$ 33,00"} alt={"Need For Speed"} />
@@ -49,7 +49,7 @@ export default function Home() {
 
 
       {/* Esportes */}
-      <Stack spacing={20}>
+      <Stack spacing={24}>
         <Stack
           align={"center"}
         >
@@ -57,14 +57,16 @@ export default function Home() {
         </Stack>
 
         <Stack
-          px={40}
+          spacing={14}
+          px={40} 
         >
           <HStack
             align={"flex-start"}
-            spacing={10}
+            spacing={12}
             px={10}
             justify={"center"}
-            // w="100%"
+            w={"100%"}
+
           >
             <CardIndex src={"/steep.png"} width={370} heigth={459} name={"Steep"} price={"R$ 110,00"} alt={"steep"} />
             <CardIndex src={"/nba.png"} width={370} heigth={459} name={"Nba2k22"} price={"R$ 50,00"} alt={"nba"} />
@@ -84,7 +86,7 @@ export default function Home() {
       </Stack>
 
       {/* Corrida */}
-      <Stack spacing={20}>
+      <Stack spacing={24}>
         <Stack
           align={"center"}
         >
@@ -92,16 +94,17 @@ export default function Home() {
         </Stack>
 
         <Stack
-          px={40}>
+          spacing={14}
+          px={40} >
           <HStack
             align={"flex-start"}
-            spacing={10}
+            spacing={12}
             px={10}
             justify={"center"}
             // w="100%"
           >
-            <CardIndex src={"/f1 1.png"} width={370} heigth={459} name={"Fórmula1"} price={"R$ 200,00"} alt={"f1 1"} />
-            <CardIndex src={"/drive 1.png"} width={370} heigth={459} name={"2K Drive"} price={"R$ 90,00"} alt={"drive 1"} />
+            <CardIndex src={"/f1.png"} width={370} heigth={459} name={"Fórmula1"} price={"R$ 200,00"} alt={"f1 1"} />
+            <CardIndex src={"/drive.png"} width={370} heigth={459} name={"2K Drive"} price={"R$ 90,00"} alt={"drive 1"} />
             <CardIndex src={"/Nfs.png"} width={370} heigth={459} name={"Need For Speed"} price={"R$ 33,00"} alt={"Need For Speed"} />
           </HStack>
           <Stack
@@ -119,7 +122,7 @@ export default function Home() {
 
 
       {/* Ação/Aventura */}
-      <Stack spacing={20}>
+      <Stack spacing={24} pb={20}>
         <Stack
           align={"center"}
         >
@@ -128,17 +131,19 @@ export default function Home() {
 
         <Stack
           px={40}
+          spacing={14}
+
         >
           <HStack
             align={"flex-start"}
-            spacing={10}
+            spacing={12}
             px={10}
             justify={"center"}
             // w="100%"
           >
             <CardIndex src={"/bf4 1.png"} width={370} heigth={459} name={"Battlefield 4"} price={"R$ 56,00"} alt={"bf4 1"} />
             <CardIndex src={"/Farcry.png"} width={370} heigth={459} name={"Farcry New Dawn"} price={"R$ 50,00"} alt={"Farcry"} />
-            <CardIndex src={"/cod 1.png"} width={370} heigth={459} name={"Call of Duty Infinite Warfare"} price={"R$ 30,00"} alt={"cod 1"} />
+            <CardIndex src={"/cod.png"} width={370} heigth={459} name={"Call of Duty Infinite Warfare"} price={"R$ 30,00"} alt={"cod 1"} />
           </HStack>
           <Stack
             w={"100%"}
