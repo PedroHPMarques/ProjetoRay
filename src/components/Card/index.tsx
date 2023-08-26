@@ -16,8 +16,8 @@ export function CardIndex({src,width,heigth,alt,name,price}:CardIndexProps){
     return (
         <Stack spacing={9}>
             <Stack
-                border={"1px solid #000"}
-                borderRadius={"16px"}
+                // border={"1px solid #000"}
+                // borderRadius={"16px"}
                 align={"center"}
 
             >
