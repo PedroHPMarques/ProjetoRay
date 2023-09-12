@@ -3,6 +3,7 @@ import { Image } from "../Image";
 import { TextIndex } from "../Text";
 import { InputIndex } from "../Form";
 import { ButtonLogin } from "../Button";
+import { TitleIndex } from "../Title";
 
 interface CardIndexProps{
     src:string 
@@ -39,7 +40,7 @@ export function CardLogin() {
     return (
       <Stack
         borderRadius={"16px"}
-        spacing={0}
+        spacing={4}
         bg={"white"}
         w={"60%"}
       >
@@ -48,8 +49,14 @@ export function CardLogin() {
           width={"100%"}
           height={"80px"}
           borderRadius={"16px 16px 0 0"}
-        />
-        <TextIndex text={"oi"} color={"black"} size={"24px"}/>
+          textAlign={"center"}
+        >
+            <Stack
+            py={4}
+            >
+              <TitleIndex text={"Área de Login"} color={"black"} size={"36px"}/>
+            </Stack>
+        </Box>
         <Stack
         spacing={16}
         align={"center"}
