@@ -15,11 +15,11 @@ export function Navbar(){
         justify={"space-evenly"}
         >
             <Image src={"/logo.png"} alt={"Logo Ray"} width={75} height={75}/>
-            <LinkNavbar href={"#"} text={"Home"}/>
-            <LinkNavbar href={"#"} text={"Contato"}/>
-            <LinkNavbar href={"#"} text={"Membros"}/>
-            <LinkNavbar href={"#"} text={"Gerenciamento"}/>
-            <LinkNavbar href={"#"} text={"Login"}/>
+            <LinkNavbar href={"/"} text={"Home"}/>
+            <LinkNavbar href={"/contato"} text={"Contato"}/>
+            <LinkNavbar href={"/membros"} text={"Membros"}/>
+            <LinkNavbar href={"/"} text={"Gerenciamento"}/>
+            <LinkNavbar href={"/login"} text={"Login"}/>
         </HStack>
     )
 }
