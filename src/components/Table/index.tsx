@@ -1,4 +1,5 @@
-import { Stack, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { Button, HStack, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { MdDelete, MdOutlineEdit,MdRemoveRedEye} from "react-icons/md"
 
 interface TableIndexProps {
     nome: string
@@ -36,6 +37,66 @@ export function TableIndex({ nome, email, niver, cargo }: TableIndexProps) {
 
                 </Table>
             </TableContainer>
+        </Stack>
+    )
+}
+
+
+interface TableManagerProps {
+    nome: string
+    email: string
+    niver: string
+    cargo: string
+}
+
+export function TableManager({ nome, email, niver, cargo }: TableManagerProps) {
+    return (
+        <Stack align={"center"}>
+            <Stack w={"80%"} >
+                <TableContainer>
+                    <Table variant='simple'>
+                        <Thead
+                            bg={"orange"}
+                        >
+                            <Tr
+                            >
+                                <Th  border={"1px solid #000"}>Nome</Th>
+                                <Th  border={"1px solid #000"}>E-mail</Th>
+                                <Th  border={"1px solid #000"}>Aniversário</Th>
+                                <Th  border={"1px solid #000"}>Cargo</Th>
+                            </Tr>
+                        </Thead>
+                        <Tbody
+                            bg={"white"}
+                        >
+                            <Tr >
+                                <Td border={"1px solid #000"}>{nome}</Td>
+                                <Td border={"1px solid #000"}>{email}</Td>
+                                <Td border={"1px solid #000"}>{niver}</Td>
+                                <Td border={"1px solid #000"}>{cargo}</Td>
+                            </Tr>
+                            <Tr>
+                            </Tr>
+                        </Tbody>
+                    </Table>
+                </TableContainer>
+                        {/* <HStack justifyContent={"center"}>
+                                <Button leftIcon={<MdDelete />} colorScheme='blackAlpha' variant='solid' 
+                                color={"orange"}>
+                                Deletar
+                                </Button>
+
+                                <Button leftIcon={<MdOutlineEdit />} colorScheme='blackAlpha' variant='solid' 
+                                color={"orange"}>
+                                Editar
+                                </Button>
+
+                                <Button leftIcon={<MdRemoveRedEye />} colorScheme='blackAlpha' variant='solid'
+                                 color={"orange"}>
+                                Visualizar
+                                </Button>
+                        </HStack> */}
+                                     </Stack>
         </Stack>
     )
 }
