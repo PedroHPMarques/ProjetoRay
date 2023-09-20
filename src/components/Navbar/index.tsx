@@ -18,7 +18,7 @@ export function Navbar(){
             <LinkNavbar href={"/"} text={"Home"}/>
             <LinkNavbar href={"/contato"} text={"Contato"}/>
             <LinkNavbar href={"/membros"} text={"Membros"}/>
-            <LinkNavbar href={"/gerenciamento"} text={"Gerenciamento"}/>
+            <LinkNavbar href={"/apiMembros"} text={"Gerenciamento"}/>
             <LinkNavbar href={"/login"} text={"Login"}/>
         </HStack>
     )

@@ -1,4 +1,5 @@
 import { Image } from "@/components/Image";
+import { LinkIndex } from "@/components/Link";
 import { TextIndex } from "@/components/Text";
 import { TitleIndex } from "@/components/Title";
 import { HStack, Stack } from "@chakra-ui/react";
@@ -25,21 +26,22 @@ export default function Contato(){
                         <TitleIndex text={"Redes Sociais"} color={"black"} size={"48px"}/>
                     </Stack>
                     <HStack
+                    spacing={10}
                     >
                         <TextIndex text={"Facebook"} color={"black"} size={"32px"}/>
-                        <Image src={"/face.png"} alt={"logo Facebook"} width={60} height={60}/>
+                        <LinkIndex href={"#"} src={"/face.png"}/>
                     </HStack>
                     <HStack
                     spacing={8}
                     >
                         <TextIndex text={"Instagram"} color={"black"} size={"32px"}/>
-                        <Image src={"/insta.png"} alt={"logo instagram"} width={60} height={60}/>
+                        <LinkIndex href={"#"} src={"/insta.png"}/>
                     </HStack>
                     <HStack
                     spacing={16}
                     >
                         <TextIndex text={"Youtube"} color={"black"} size={"32px"}/>
-                        <Image src={"/youtube.png"} alt={"logo youtube"} width={60} height={60}/>
+                        <LinkIndex href={"#"} src={"/youtube.png"}/>
                     </HStack>
                 </Stack>
 

@@ -1,5 +1,5 @@
 import { Button, HStack, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
-import { MdDelete, MdOutlineEdit,MdRemoveRedEye} from "react-icons/md"
+import { MdDelete, MdOutlineEdit, MdRemoveRedEye } from "react-icons/md"
 
 interface TableIndexProps {
     nome: string
@@ -18,10 +18,10 @@ export function TableIndex({ nome, email, niver, cargo }: TableIndexProps) {
                     >
                         <Tr
                         >
-                            <Th  border={"1px solid #000"}>Nome</Th>
-                            <Th  border={"1px solid #000"}>E-mail</Th>
-                            <Th  border={"1px solid #000"}>Aniversário</Th>
-                            <Th  border={"1px solid #000"}>Cargo</Th>
+                            <Th border={"1px solid #000"}>Nome</Th>
+                            <Th border={"1px solid #000"}>E-mail</Th>
+                            <Th border={"1px solid #000"}>Aniversário</Th>
+                            <Th border={"1px solid #000"}>Cargo</Th>
                         </Tr>
                     </Thead>
                     <Tbody
@@ -52,7 +52,7 @@ interface TableManagerProps {
 export function TableManager({ nome, email, niver, cargo }: TableManagerProps) {
     return (
         <Stack align={"center"}>
-            <Stack w={"80%"} >
+            <Stack w={"80%"}  >
                 <TableContainer>
                     <Table variant='simple'>
                         <Thead
@@ -60,10 +60,10 @@ export function TableManager({ nome, email, niver, cargo }: TableManagerProps) {
                         >
                             <Tr
                             >
-                                <Th  border={"1px solid #000"}>Nome</Th>
-                                <Th  border={"1px solid #000"}>E-mail</Th>
-                                <Th  border={"1px solid #000"}>Aniversário</Th>
-                                <Th  border={"1px solid #000"}>Cargo</Th>
+                                <Th border={"1px solid #000"}>Nome</Th>
+                                <Th border={"1px solid #000"}>E-mail</Th>
+                                <Th border={"1px solid #000"}>Aniversário</Th>
+                                <Th border={"1px solid #000"}>Cargo</Th>
                             </Tr>
                         </Thead>
                         <Tbody
@@ -80,23 +80,7 @@ export function TableManager({ nome, email, niver, cargo }: TableManagerProps) {
                         </Tbody>
                     </Table>
                 </TableContainer>
-                        {/* <HStack justifyContent={"center"}>
-                                <Button leftIcon={<MdDelete />} colorScheme='blackAlpha' variant='solid' 
-                                color={"orange"}>
-                                Deletar
-                                </Button>
-
-                                <Button leftIcon={<MdOutlineEdit />} colorScheme='blackAlpha' variant='solid' 
-                                color={"orange"}>
-                                Editar
-                                </Button>
-
-                                <Button leftIcon={<MdRemoveRedEye />} colorScheme='blackAlpha' variant='solid'
-                                 color={"orange"}>
-                                Visualizar
-                                </Button>
-                        </HStack> */}
-                                     </Stack>
+            </Stack>
         </Stack>
     )
 }

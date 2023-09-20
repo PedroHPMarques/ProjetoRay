@@ -1,6 +1,7 @@
-import { HStack, Stack } from "@chakra-ui/react";
+import { HStack, Link, Stack } from "@chakra-ui/react";
 import { Image } from "../Image";
 import { TextIndex } from "../Text";
+import { LinkIndex } from "../Link";
 
 
 export function Footer(){
@@ -31,9 +32,11 @@ export function Footer(){
             w={"50%"}
             spacing={10}
             >
-                <Stack>
-                    <Image src={"/redes.png"} alt={"Redes Sociais"} width={272} height={60}/>
-                </Stack>
+                    <HStack spacing={10}>
+                        <LinkIndex href={"#"} src={"/insta.png"}/>
+                        <LinkIndex href={"#"} src={"/youtube.png"}/>
+                        <LinkIndex href={"#"} src={"/face.png"}/>
+                    </HStack>
                 <Stack>
                     <TextIndex text={"Telefone:(123) 456-7890"} color={"#000"} size={"20"}/>
                 </Stack>

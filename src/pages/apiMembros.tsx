@@ -91,6 +91,29 @@ export default function ApiMembros() {
         }
     };
 
+    const handleEdit = async (memberId: number, updatedData: object) => {
+        // Envia uma requisição PUT ou PATCH para a API para atualizar o membro.
+        const res = await fetch(`${apiUrl}/${memberId}`, {
+            method: "PUT", // Ou "PATCH" dependendo da sua API
+            headers: {
+                "Content-Type": "application/json", // Certifique-se de definir o tipo de conteúdo correto para a sua API
+            },
+            body: JSON.stringify(updatedData), // Os dados atualizados do membro em formato JSON
+        });
+    
+        // Verifica se a atualização foi bem-sucedida.
+        if (res.ok) {
+            toast.success('Membro atualizado com sucesso!');
+            // Atualiza a lista de membros após editar.
+            getMembros();
+        } else {
+            // Em caso de erro, exibe um aviso de erro usando toast.
+            console.error("Erro ao editar membro");
+            toast.error('Não foi possível editar o membro');
+        }
+    };
+    
+
 
     useEffect(() => {
         getMembros()

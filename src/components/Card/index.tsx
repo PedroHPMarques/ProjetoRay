@@ -51,11 +51,11 @@ export function CardLogin() {
           borderRadius={"16px 16px 0 0"}
           textAlign={"center"}
         >
-            <Stack
-            py={4}
-            >
-              <TitleIndex text={"Área de Login"} color={"black"} size={"36px"}/>
-            </Stack>
+           
+              <Stack align={"center"} pt={2}>
+                <Image src={"/logo.png"} alt={"Logo Ray"} width={60} height={60}/>
+              </Stack>
+           
         </Box>
         <Stack
         spacing={16}
