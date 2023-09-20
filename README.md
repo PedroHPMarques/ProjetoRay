@@ -1,6 +1,8 @@
 # ProjetoRay
 Criação de um projeto Desenvolvido em Next.js, utilizando Chakra para estilização dos componentes e com dados de uma Api Disponibilizada pela Code Empresa Jr.
+
 O E-commerce em questão é relacionado a uma plataforma de venda de jogos.
+
 Possui uma LandingPage,Área de Contato,Área para ver os membros cadastrados, Além de uma pagina de Login para realizar o gerenciamento desses membros.
 
 
