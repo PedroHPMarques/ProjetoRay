@@ -182,15 +182,9 @@ export default function ApiMembros() {
                 <div key={index}>
                     <Stack >
 
-                    {/* <p>{membroTest.name}</p>
-                        <p>{membroTest.email}</p>
-                        <p>{membroTest.cargo}</p>
-                    <p>{membroTest.aniversario}</p> */}
-
                     <Stack py={4}>
                         <TableManager nome={membroTest.name} email={membroTest.email} niver={membroTest.cargo} cargo={membroTest.aniversario} />
                     </Stack>
-                    {/* <button onClick={() => handleDelete(membroTest.id)}>Delete</button> Botão individual para cada membro de deletar */}
 
                     <Stack paddingBottom={10}>
                         <HStack justifyContent={"center"}>
