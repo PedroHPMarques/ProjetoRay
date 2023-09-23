@@ -1,6 +1,6 @@
 "use client"
 import { toast } from 'react-toastify';
-import { Button, HStack } from '@chakra-ui/react'
+import { Button, HStack, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
 import 'react-toastify/dist/ReactToastify.css';
 import { TableManager } from "@/components/Table"
@@ -130,7 +130,7 @@ export default function ApiMembros() {
 
     return (
         <Stack>
-            <Navbar/>
+            <Navbar />
             <Stack
                 py={10}
             >
@@ -140,10 +140,7 @@ export default function ApiMembros() {
                         <Stack align={"center"}>
                             <Input size='sm' focusBorderColor='orange' placeholder='Nome' name='name' w={"20%"} bg={"white"} borderRadius={"8px"}
                                 value={newMembro.name || ""}
-                                // Mostra valores originais do membro, caso não tenha valor, mostra vazio
-                                // no caso não terá valor, porque estamos criando um usuário novo
                                 onChange={handleInputChange}
-                            // Captura as mudanças de valor
                             />
                             <Input size='sm' focusBorderColor='orange' placeholder='Email' name='email' w={"20%"} bg={"white"} borderRadius={"8px"}
                                 value={newMembro.email || ""}
@@ -190,41 +187,62 @@ export default function ApiMembros() {
 
                         <Stack py={4}>
                             {editMembroId === membroTest.id ? (
-                                <Stack>
-                                    <div>
-                                        <input
-                                            placeholder="nome"
-                                            name="name"
-                                            type="text"
-                                            value={newMembro.name || membroTest.name}
-                                        onChange={handleInputChange}
-                                    />
-                                        <input
-                                            placeholder="cargo"
-                                            name="cargo"
-                                            type="text"
-                                            value={newMembro.cargo || membroTest.cargo}
-                                        onChange={handleInputChange}
-                                    />
-                                        <input
-                                            placeholder="email"
-                                            name="email"
-                                            type="email"
-                                            value={newMembro.email ||  membroTest.email}
-                                        onChange={handleInputChange}
-                                    />
-                                        <input
-                                            placeholder="aniversario"
-                                            name="aniversario"
-                                            type="text"
-                                            value={newMembro.aniversario ||  membroTest.aniversario}
-                                        onChange={handleInputChange}
-                                    />
-                                        <button type="submit" onClick={() => handleSaveEdit(membroTest.id)}>Salvar</button>
-                                    </div>
+                                <Stack align={"center"}>
+                                    <Stack w={"80%"}>
+                                        <TableContainer>
+                                            <Table variant='simple'>
+                                                <Thead
+                                                    bg={"orange"}
+                                                >
+                                                    <Tr
+                                                    >
+                                                        <Th border={"1px solid #000"}>Nome</Th>
+                                                        <Th border={"1px solid #000"}>E-mail</Th>
+                                                        <Th border={"1px solid #000"}>Aniversário</Th>
+                                                        <Th border={"1px solid #000"}>Cargo</Th>
+                                                    </Tr>
+                                                </Thead>
+                                                <Tbody
+                                                    bg={"white"}
+                                                >
+                                                    <Tr >
+                                                        <Td border={"1px solid #000"}>
+                                                            <Input size='md' focusBorderColor='orange' placeholder='Nome' name='name' type="text" w={"100%"} bg={"white"} borderRadius={"8px"}
+                                                                value={newMembro.name || membroTest.name}
+                                                                onChange={handleInputChange}
+                                                            />
+                                                        </Td>
+                                                        <Td border={"1px solid #000"}>
+                                                            <Input size='md' focusBorderColor='orange' placeholder='email' name='email' type="email" w={"100%"} bg={"white"} borderRadius={"8px"}
+                                                                value={newMembro.email || membroTest.email}
+                                                                onChange={handleInputChange}
+                                                            />
+                                                        </Td>
+                                                        <Td border={"1px solid #000"}>
+                                                            <Input size='md' focusBorderColor='orange' placeholder='aniversario' name='aniversario' type="text" w={"100%"} bg={"white"} borderRadius={"8px"}
+                                                                value={newMembro.aniversario || membroTest.aniversario}
+                                                                onChange={handleInputChange}
+                                                            />
+                                                        </Td>
+                                                        <Td border={"1px solid #000"}>
+                                                            <Input size='md' focusBorderColor='orange' placeholder='cargo' name='cargo' type="text" w={"100%"} bg={"white"} borderRadius={"8px"}
+                                                                value={newMembro.cargo || membroTest.cargo}
+                                                                onChange={handleInputChange}
+                                                            />
+                                                        </Td>
+                                                    </Tr>
+                                                    <Tr>
+                                                    </Tr>
+                                                </Tbody>
+                                            </Table>
+                                        </TableContainer>
+                                    </Stack>
+                                    <Button colorScheme='blackAlpha' variant='solid'
+                                        color={"orange"} type="submit" onClick={() => handleSaveEdit(membroTest.id)}>Salvar</Button>
                                 </Stack>
+
                             ) : (
-                                <TableManager nome={membroTest.name} email={membroTest.email} niver={membroTest.cargo} cargo={membroTest.aniversario} />
+                                <TableManager nome={membroTest.name} email={membroTest.email} niver={membroTest.aniversario} cargo={membroTest.cargo} />
                             )}
                         </Stack>
 
@@ -245,7 +263,7 @@ export default function ApiMembros() {
                 </div>
 
             ))}
-            <Footer/>
+            <Footer />
         </Stack>
     )
 }
