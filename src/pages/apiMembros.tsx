@@ -6,7 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { TableManager } from "@/components/Table"
 import { useEffect, useState } from "react"
 import { Stack } from '@chakra-ui/react';
-import { MdDelete, MdOutlineEdit, MdRemoveRedEye } from 'react-icons/md';
+import { MdDelete, MdOutlineEdit } from 'react-icons/md';
+import { Footer } from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
 
 const apiUrl = "http://localhost:3001/membros"
 
@@ -23,6 +25,7 @@ type Membro = {
 export default function ApiMembros() {
     const [membros, setMembros] = useState<Membro[]>([])
     const [newMembro, setNewMembro] = useState<Partial<Membro>>({});
+    const [editMembroId, setEditMembroId] = useState<number | null>(null);
     // Tipo parcial, pois não temos todos os dados do membro
     const getMembros = async () => {
         const res = await fetch(apiUrl)
@@ -91,28 +94,30 @@ export default function ApiMembros() {
         }
     };
 
-    const handleEdit = async (memberId: number, updatedData: object) => {
-        // Envia uma requisição PUT ou PATCH para a API para atualizar o membro.
-        const res = await fetch(`${apiUrl}/${memberId}`, {
-            method: "PUT", // Ou "PATCH" dependendo da sua API
+    const handleSaveEdit = async (memberId: number) => {
+
+        const response = await fetch(`${apiUrl}/${memberId}`, {
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json", // Certifique-se de definir o tipo de conteúdo correto para a sua API
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(updatedData), // Os dados atualizados do membro em formato JSON
-        });
-    
-        // Verifica se a atualização foi bem-sucedida.
-        if (res.ok) {
-            toast.success('Membro atualizado com sucesso!');
-            // Atualiza a lista de membros após editar.
-            getMembros();
-        } else {
-            // Em caso de erro, exibe um aviso de erro usando toast.
-            console.error("Erro ao editar membro");
-            toast.error('Não foi possível editar o membro');
+            body: JSON.stringify(newMembro)
+        })
+        if (response.ok) {
+            alert("Membro editado com sucesso")
+            setEditMembroId(null)
+            setNewMembro({})
+            getMembros()
         }
-    };
-    
+        else {
+            alert("Erro ao tentar editar")
+        }
+    }
+
+    const handleEdit = (memberId: number) => {
+        setEditMembroId(memberId)
+    }
+
 
 
     useEffect(() => {
@@ -125,6 +130,7 @@ export default function ApiMembros() {
 
     return (
         <Stack>
+            <Navbar/>
             <Stack
                 py={10}
             >
@@ -178,38 +184,68 @@ export default function ApiMembros() {
             </Stack>
 
             {membros.map((membroTest, index) => (
-            
+
                 <div key={index}>
                     <Stack >
 
-                    <Stack py={4}>
-                        <TableManager nome={membroTest.name} email={membroTest.email} niver={membroTest.cargo} cargo={membroTest.aniversario} />
-                    </Stack>
+                        <Stack py={4}>
+                            {editMembroId === membroTest.id ? (
+                                <Stack>
+                                    <div>
+                                        <input
+                                            placeholder="nome"
+                                            name="name"
+                                            type="text"
+                                            value={newMembro.name || membroTest.name}
+                                        onChange={handleInputChange}
+                                    />
+                                        <input
+                                            placeholder="cargo"
+                                            name="cargo"
+                                            type="text"
+                                            value={newMembro.cargo || membroTest.cargo}
+                                        onChange={handleInputChange}
+                                    />
+                                        <input
+                                            placeholder="email"
+                                            name="email"
+                                            type="email"
+                                            value={newMembro.email ||  membroTest.email}
+                                        onChange={handleInputChange}
+                                    />
+                                        <input
+                                            placeholder="aniversario"
+                                            name="aniversario"
+                                            type="text"
+                                            value={newMembro.aniversario ||  membroTest.aniversario}
+                                        onChange={handleInputChange}
+                                    />
+                                        <button type="submit" onClick={() => handleSaveEdit(membroTest.id)}>Salvar</button>
+                                    </div>
+                                </Stack>
+                            ) : (
+                                <TableManager nome={membroTest.name} email={membroTest.email} niver={membroTest.cargo} cargo={membroTest.aniversario} />
+                            )}
+                        </Stack>
 
-                    <Stack paddingBottom={10}>
-                        <HStack justifyContent={"center"}>
-                                    <Button onClick={() => handleDelete(membroTest.id)} leftIcon={<MdDelete />} colorScheme='blackAlpha' variant='solid'
+                        <Stack paddingBottom={10}>
+                            <HStack justifyContent={"center"}>
+                                <Button onClick={() => handleDelete(membroTest.id)} leftIcon={<MdDelete />} colorScheme='blackAlpha' variant='solid'
                                     color={"orange"}>
                                     Deletar
-                                    </Button>
-                                    <Button leftIcon={<MdOutlineEdit />} colorScheme='blackAlpha' variant='solid'
+                                </Button>
+                                <Button onClick={() => handleEdit(membroTest.id)} leftIcon={<MdOutlineEdit />} colorScheme='blackAlpha' variant='solid'
                                     color={"orange"}>
                                     Editar
-                                    </Button>
-                                    <Button leftIcon={<MdRemoveRedEye />} colorScheme='blackAlpha' variant='solid'
-                                     color={"orange"}>
-                                    Visualizar
-                                    </Button>
+                                </Button>
+
                             </HStack>
+                        </Stack>
                     </Stack>
-
-            </Stack>
                 </div>
-                        
+
             ))}
+            <Footer/>
         </Stack>
-
-
-
-)
+    )
 }

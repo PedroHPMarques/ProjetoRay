@@ -1,5 +1,4 @@
-import { Button, HStack, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
-import { MdDelete, MdOutlineEdit, MdRemoveRedEye } from "react-icons/md"
+import { Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 
 interface TableIndexProps {
     nome: string

@@ -17,7 +17,7 @@ export function InputIndex({label,type,w,placeholder}:InputIndexProps) {
             fontWeight={"bold"}
             fontSize={"20px"}
             >{label}</FormLabel>
-            <Input type={type} placeholder={placeholder}/>
+            <Input focusBorderColor='orange' type={type} placeholder={placeholder}/>
         </FormControl>
     )
 }

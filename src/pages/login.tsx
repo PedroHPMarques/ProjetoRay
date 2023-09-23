@@ -5,8 +5,9 @@ export default function Login(){
     return(
         <Stack
         as="main"
-        p={10}
+        // p={10}
         align="center"
+        p={"20vh"}
         >
             <CardLogin/>
         </Stack>

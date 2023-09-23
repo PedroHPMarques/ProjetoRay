@@ -67,7 +67,7 @@ export function CardLogin() {
           w={"100%"}
           justify={"space-between"}
           >
-            <InputIndex label={"Email"} type={"email"} w={"30%"} placeholder={"Digite aqui o email"}/>
+            <InputIndex  label={"Email"} type={"email"} w={"30%"} placeholder={"Digite aqui o email"}/>
             <InputIndex label={"Senha"} type={"password"} w={"30%"} placeholder={"Digite aqui a senha"}/>
           </HStack>
         <ButtonLogin textButton={"Entrar"} href={"#"}/>
